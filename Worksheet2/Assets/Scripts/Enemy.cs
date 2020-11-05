@@ -7,7 +7,7 @@ public class Enemy
 
     public bool enemydead;
 
-    private GameObject enemyprefab, enemy;
+    private GameObject enemy;
 
     public Enemy(int hp, int dmg, string ID, bool hasdied, GameObject enemyprefab)
     { //this constructor assigns hitpoints, damage, and name to

@@ -7,7 +7,7 @@ public class Bouncer : MonoBehaviour
 {
     
     [SerializeField] int ballhealth = 100;
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
 
 
     [SerializeField] Text mytext;
@@ -20,8 +20,7 @@ public class Bouncer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        
+          
 
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(400f,200f));
@@ -39,17 +38,18 @@ public class Bouncer : MonoBehaviour
         ballhealth-=10;
 
         mytext.text = "Health: " + ballhealth.ToString();
-
-        otherVelocity= otherVelocity + new Vector2(50f, 50f);
+       
+        otherVelocity = otherVelocity + new Vector2(50f, 50f);
         Debug.Log(ballhealth);
          Color tmp = GetComponent<SpriteRenderer>().color;
          tmp.a-= 0.1f;
          GetComponent<SpriteRenderer>().color = tmp;
          if (ballhealth<=0)
             {
+            
             mytext.text = "THE BALL IS DEAD";
             Destroy(this.gameObject);
-            }
+        }
             
     }
 
